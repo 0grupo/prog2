@@ -9,11 +9,11 @@ if __name__ == "__main__":
     db.create_all()
 
     m1 = Moto(marca = "Yamaha", modelo = "XT 600", 
-    velocidade = "170 km/h", peso = "181 kg", cilindradas = "659,7")
+    velocidade = "170", peso = "181", cilindradas = "659,7")
     m2 = Moto(marca = "Harley-Davidson", modelo = "CG 160 Titan", 
-    velocidade = "130 km/h", peso = "121 kg", cilindradas = "162,7")
+    velocidade = "130", peso = "121", cilindradas = "162,7")
     m3 = Moto(marca = "Honda", modelo = "Iron 883", 
-    velocidade = "160 km/h", peso = "256 kg", cilindradas = "883")
+    velocidade = "160", peso = "256", cilindradas = "883")
 
     db.session.add(m1)
     db.session.add(m2)

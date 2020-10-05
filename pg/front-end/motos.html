@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <title>Cadastro de Motos</title>
+
+    <style>
+        body {
+            font-family: 'Raleway';
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2">
+
+            <!--<img src="" height="60px" class="navbar-brand nav-justified">-->
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mr-auto">
+                    <span class="navbar-text">Cadastro Motos</span>
+                    <a class="nav-item nav-link" href="#" id="linkInicio">Início
+                        <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#" id="linkListarMotos">Listar</a>
+                    <a class="nav-item nav-link" data-toggle="modal" 
+                        data-target="#modalIncluirMotos" href="#" data-toggle="modal" data-target="#ExemploModalCentralizado">Incluir</a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </nav>
+
+        <div id="corpoDaPagina">
+
+            <div id="conteudoInicial" class="invisible">
+                Cadastro de motos
+            </div>
+
+            <div class="modal fade" id="modalIncluirMotos" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nova moto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="campoMarca">Marca</label>
+                                    <input type="text" class="form-control" id="campoMarca"
+                                        aria-describedby="marcaHelp" placeholder="Informe a marca">
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoModelo">Modelo</label>
+                                    <input type="text" class="form-control" id="campoModelo"
+                                        aria-describedby="modeloHelp" placeholder="Informe o modelo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoVelocidade">Velocidade</label>
+                                    <input type="text" class="form-control" id="campoVelocidade"
+                                        aria-describedby="velocidadeHelp" placeholder="Informe a velocidade">
+                                        <small id="velocidadeHelp" class="form-text text-muted">(km/h</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoPeso">Peso</label>
+                                    <input type="text" class="form-control" id="campoPeso"
+                                        aria-describedby="pesoHelp" placeholder="Informe o peso">
+                                        <small id="pesoHelp" class="form-text text-muted">(em kg)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="campoCilindradas">Cilindradas</label>
+                                    <input type="text" class="form-control" id="campoCilindradas"
+                                        aria-describedby="cilindradasHelp" placeholder="Informe a cilindradas">
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button id="btnIncluirMotos" type="button" class="btn btn-primary">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table invisible table-striped table-hover" id="TabelaMotos">
+                <thead>
+                    <tr>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Velocidade</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Cilindradas</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabelaMotos">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
