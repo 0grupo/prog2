@@ -11,6 +11,7 @@ $(function() {
             }
         });
 
+        //parte modificada
         function listar_motos (resposta) {
             $('#corpoTabelaMotos').empty();
             mostrar_conteudo('TabelaMotos');
@@ -21,6 +22,10 @@ $(function() {
                 '<td>' + resposta[i].velocidade + 'km/h' + '</td>' + 
                 '<td>' + resposta[i].peso + 'kg' + '</td>' + 
                 '<td>' + resposta[i].cilindradas + '</td>' + 
+                '<td><a href=# id="excluir_' + resposta[i].id + '" ' + 
+                  'class="excluir_moto"><img src="imagens/excluir.png" '+
+                  'alt="Excluir moto" title="Excluir moto" width=40px></a>' + 
+                '</td>' + 
                 '</tr>';
                 $('#corpoTabelaMotos').append(lin);
             }
@@ -89,5 +94,32 @@ $(function() {
     });
 
     mostrar_conteudo("conteudoInicial");
+
+// add essa parte
+    $(document).on("click", ".excluir_moto", function() {
+        var componente_clicado = $(this).attr('id'); 
+        var nome_icone = "excluir_";
+        var id_moto = componente_clicado.substring(nome_icone.length);
+        $.ajax({
+            url: 'http://localhost:5000/excluir_moto/'+id_moto,
+            type: 'DELETE', 
+            dataType: 'json', 
+            success: motoExcluida, 
+            error: erroAoExcluir
+        });
+        function motoExcluida (retorno) {
+            if (retorno.resultado == "ok") { 
+                $("#linha_" + id_moto).fadeOut(1000, function(){
+                    alert("Moto removida");
+                });
+            } else {
+                alert(retorno.resultado + ":" + retorno.detalhes);
+            }            
+        }
+        function erroAoExcluir (retorno) {
+            alert("erro ao excluir dados, verifique o backend: ");
+        }
+    });
+//
 
 });
