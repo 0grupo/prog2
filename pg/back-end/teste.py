@@ -32,5 +32,7 @@ if __name__ == "__main__":
     print(m1.json())
     print(m2.json())
     print(m3.json())
+
     print(r1.json())
+    
     print(c1.json())

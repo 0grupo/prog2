@@ -123,3 +123,80 @@ $(function() {
 //
 
 });
+
+    function exibir_revendedora() {
+        $.ajax({
+            url: 'http://localhost:5000/listar_revendedora',
+            method: 'GET',
+            dataType: 'json', 
+            success: listar, 
+            error: function(problema) {
+                alert("erro ao ler dados, verifique o backend: ");
+            }
+        });
+
+        function listar (revendedora) {
+            $('#corpoTabelarevendedora').empty();
+            mostrar_conteudo("cadastrorevendedora");      
+            for (var i in revendedora) { 
+                lin = '<tr id="linha_revendedora_'+revendedora[i].id+'">' + 
+                '<td>' + ranking[i].localizacao + '</td>' + 
+                '<td>' + ranking[i].telefone + '</td>' +
+                '<td>' + ranking[i].montadora + '</td>' +
+                // dados da moto
+                '<td>' + revendedora[i].moto.marca + '</td>' + 
+                '<td>' + revendedora[i].moto.modelo + '</td>' + 
+                '<td>' + revendedora[i].moto.velocidade + '</td>' + 
+                '<td>' + revendedora[i].moto.peso + '</td>' + 
+                '<td>' + revendedora[i].moto.cilindradas + '</td>' + 
+                '<td><a href=# id="excluir_revendedora_' + revendedora[i].id + '" ' + 
+                    'class="excluir_revendedora"><img src="imagens/excluir.png" '+
+                    'alt="Excluir revendedora" title="Excluir revendedora"  width=40px></a>' + 
+                '</td>' + 
+                '</tr>';
+                $('#corpoTabelarevendedora').append(lin);
+            }
+        }
+    }
+
+    $(document).on("click", "#linkListarrevendedora", function() {
+        exibir_revendedora();
+    });
+
+    function exibir_comprador() {
+        $.ajax({
+            url: 'http://localhost:5000/listar_comprador',
+            method: 'GET',
+            dataType: 'json', 
+            success: listar, 
+            error: function(problema) {
+                alert("erro ao ler dados, verifique o backend: ");
+            }
+        });
+        function listar (comprador) {
+            $('#corpoTabelacomprador').empty();
+            mostrar_conteudo("cadastrocomprador");      
+            for (var i in comprador) { 
+                lin = '<tr id="linha_comprador_'+comprador[i].id+'">' + 
+                '<td>' + comprador[i].moto.nome + '</td>' + 
+                '<td>' + comprador[i].moto.telefone + '</td>' + 
+                '<td>' + comprador[i].moto.cpf + '</td>' + 
+                // dados da moto
+                '<td>' + comprador[i].moto.marca + '</td>' + 
+                '<td>' + comprador[i].moto.modelo + '</td>' + 
+                '<td>' + comprador[i].moto.velocidade + '</td>' + 
+                '<td>' + comprador[i].moto.peso + '</td>' + 
+                '<td>' + comprador[i].moto.cilindradas + '</td>' +
+                '<td><a href=# id="excluir_comprador_' + comprador[i].id + '" ' + 
+                    'class="excluir_comprador"><img src="imagens/excluir.png" '+
+                    'alt="Excluir comprador" title="Excluir comprador"  width=40px></a>' + 
+                '</td>' + 
+                '</tr>';
+                $('#corpoTabelacomprador').append(lin);
+            }
+        }
+    }
+
+    $(document).on("click", "#linkListarcomprador", function() {
+        exibir_comprador();
+    });
