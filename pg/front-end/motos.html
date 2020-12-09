@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
 
     <title>Cadastro de Motos</title>
 
@@ -31,11 +31,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
                     <span class="navbar-text">Cadastro Motos</span>
-                    <a class="nav-item nav-link" href="#" id="linkInicio">Início
-                        <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#" id="linkListarMotos">Listar</a>
-                    <a class="nav-item nav-link" data-toggle="modal" 
-                        data-target="#modalIncluirMotos" href="#" data-toggle="modal" data-target="#ExemploModalCentralizado">Incluir</a>
+                    <a class="nav-item nav-link" href="#" id="linkListarMotos">Listar Motos</a>
+                    <a class="nav-item nav-link" href="#" id="linkListarrevendedora">Listar Revendedora</a>
+                    <a class="nav-item nav-link" href="#" id="linkListarcomprador">Listar Comprador</a>
+                    <a class="nav-item nav-link" data-toggle="modal" data-target="#modalIncluirMotos" href="#"
+                        data-toggle="modal" data-target="#ExemploModalCentralizado">Incluir</a>
                 </div>
             </div>
 
@@ -66,8 +66,8 @@
                             <form>
                                 <div class="form-group">
                                     <label for="campoMarca">Marca</label>
-                                    <input type="text" class="form-control" id="campoMarca"
-                                        aria-describedby="marcaHelp" placeholder="Informe a marca">
+                                    <input type="text" class="form-control" id="campoMarca" aria-describedby="marcaHelp"
+                                        placeholder="Informe a marca">
                                 </div>
                                 <div class="form-group">
                                     <label for="campoModelo">Modelo</label>
@@ -78,13 +78,13 @@
                                     <label for="campoVelocidade">Velocidade</label>
                                     <input type="text" class="form-control" id="campoVelocidade"
                                         aria-describedby="velocidadeHelp" placeholder="Informe a velocidade">
-                                        <small id="velocidadeHelp" class="form-text text-muted">(km/h</small>
+                                    <small id="velocidadeHelp" class="form-text text-muted">(km/h</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="campoPeso">Peso</label>
-                                    <input type="text" class="form-control" id="campoPeso"
-                                        aria-describedby="pesoHelp" placeholder="Informe o peso">
-                                        <small id="pesoHelp" class="form-text text-muted">(em kg)</small>
+                                    <input type="text" class="form-control" id="campoPeso" aria-describedby="pesoHelp"
+                                        placeholder="Informe o peso">
+                                    <small id="pesoHelp" class="form-text text-muted">(em kg)</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="campoCilindradas">Cilindradas</label>
@@ -102,7 +102,7 @@
                 </div>
             </div>
 
-            <table class="table invisible table-striped table-hover" id="TabelaMotos">
+            <table class="table table-striped table-hover" id="TabelaMotos">
                 <thead>
                     <tr>
                         <th scope="col">Marca</th>
@@ -119,10 +119,9 @@
 
         <div class="container" id="cadastrorevendedora">
             <h5>Revendedora</h5>
-            <a class="nav-item nav-link" data-toggle="modal" 
-            data-target="#modalIncluirrevendedora" href="#">
-              <img src="imagens/incluir.png" title="Incluir moto" width="40px" height="40px"></a>
-            
+            <a class="nav-item nav-link" data-toggle="modal" data-target="#modalIncluirrevendedora" href="#">
+                <img src="imagens/incluir.png" title="Incluir moto" width="40px" height="40px"></a>
+
             <table class="table table-striped table-hover fixed" id="tabelarevendedora">
                 <thead>
                     <tr>
@@ -145,10 +144,9 @@
 
         <div class="container" id="cadastrocomprador">
             <h5>Comprador</h5>
-            <a class="nav-item nav-link" data-toggle="modal" 
-            data-target="#modalIncluircomprador" href="#">
-              <img src="imagens/incluir.png" title="Incluir moto" width="40px" height="40px"></a>
-            
+            <a class="nav-item nav-link" data-toggle="modal" data-target="#modalIncluircomprador" href="#">
+                <img src="imagens/incluir.png" title="Incluir moto" width="40px" height="40px"></a>
+
             <table class="table table-striped table-hover" id="tabelacomprador">
                 <thead>
                     <tr>
@@ -170,16 +168,16 @@
         </div>
 
     </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
-</html>   
+</html>

@@ -1,5 +1,6 @@
 from config import *
 
+
 class Moto(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -24,16 +25,17 @@ class Moto(db.Model):
             "cilindradas": self.cilindradas
         })
 
+
 class Revendedora(db.Model):
 
-    id = db.Column(db.Integer, primary_key=True) 
-    localizacao = db.Column(db.String(254)) 
+    id = db.Column(db.Integer, primary_key=True)
+    localizacao = db.Column(db.String(254))
     montadora = db.Column(db.String(254))
     telefone = db.Column(db.Integer)
     moto_id = db.Column(db.Integer, db.ForeignKey(Moto.id))
     moto = db.relationship("Moto")
 
-    def _str_(self): 
+    def _str_(self):
         return self.localizacao + ", " + self.montadora +\
             str(self.telefone) + str(self.moto)
 
@@ -45,26 +47,27 @@ class Revendedora(db.Model):
             "telefone": self.telefone,
             "moto_id": self.moto_id,
             "moto": self.moto.json()
-        }) 
+        })
+
 
 class Comprador(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    telefone = db.Column(db.Integer)
     nome = db.Column(db.String(254))
+    telefone = db.Column(db.Integer)
     cpf = db.Column(db.Integer)
     moto_id = db.Column(db.Integer, db.ForeignKey(Moto.id))
     moto = db.relationship("Moto")
 
     def _str_(self):
         return str(self.telefone) + ", " + self.nome +\
-            str(self.cpf)+ str(self.moto)
+            str(self.cpf) + str(self.moto)
 
     def json(self):
         return ({
-            "id":self.id,
-            "telefone":self.telefone,
+            "id": self.id,
             "nome": self.nome,
+            "telefone": self.telefone,
             "cpf": self.cpf,
             "moto_id": self.moto_id,
             "moto": self.moto.json()
